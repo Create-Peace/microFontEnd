@@ -1,22 +1,41 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Button type="success" @click="messageTip">测试弹框</Button>
   </div>
 </template>
 
 <script>
+// import 'element-ui/lib/theme-chalk/index.css';
 import HelloWorld from './components/HelloWorld.vue'
-
+import { Button, Message } from 'element-ui'
+import axios from 'axios'
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    HelloWorld,
+    Button
+  },
+  methods: {
+    messageTip () {
+      axios.post('http://rap2api.taobao.org/app/mock/85572/account/list', {
+        "page": 1,
+        "status": 2
+      })
+      .then(res => {
+        Message({
+          type: 'success',
+          message: res.data.code
+        })
+      })
+    }
   }
 }
 </script>
 
 <style>
+@import 'https://unpkg.com/element-ui/lib/theme-chalk/index.css';
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
