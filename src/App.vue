@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <p>{{testProp}}</p>
     <!-- <img alt="Vue logo" src="./assets/logo.png"> -->
     <HelloWorld msg="Welcome to Your Vue.js App"/>
     <Button type="success" @click="messageTip">测试弹框</Button>
@@ -13,6 +14,7 @@ import { Button, Message } from 'element-ui'
 import axios from 'axios'
 export default {
   name: 'app',
+  props: ['testProp'],
   components: {
     HelloWorld,
     Button

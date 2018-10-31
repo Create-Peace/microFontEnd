@@ -29,7 +29,6 @@
     </ul>
   </div>
 </template>
-
 <script>
 // im
 export default {
