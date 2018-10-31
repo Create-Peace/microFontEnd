@@ -1,0 +1,10 @@
+//- extends layout
+
+append head
+  script(src='https://unpkg.com/vue')
+  script(src='http://127.0.0.1:3001/webcomponent/web-app.js')
+
+block content
+  h1= title
+  p Welcome to #{title}
+  web-app

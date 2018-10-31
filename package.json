@@ -6,7 +6,8 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "start": "node ./server/bin/www"
+    "start": "node ./mainserver/bin/www",
+    "server1": "node ./server1/bin/www"
   },
   "dependencies": {
     "axios": "^0.18.0",
