@@ -1,4 +1,4 @@
-# web-app
+# 实现一个vue 应用的webcomponent
 
 ## Project setup
 ```
@@ -10,9 +10,9 @@ yarn install
 yarn run serve
 ```
 
-### Compiles and minifies for production
+### Compiles and minifies for webcomponent
 ```
-yarn run build
+vue build --target wc-async --name web-app 'src/App.vue'
 ```
 
 ### Lints and fixes files
