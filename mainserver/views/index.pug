@@ -4,10 +4,26 @@
 
 prepend head
   script(src='https://unpkg.com/vue')
-  script(src='http://127.0.0.1:3001/webcomponent/web-app.js')
+  //- script(src='http://127.0.0.1:3001/webcomponent/web-app.js')
+  script(src='http://127.0.0.1:3001/webcomponent/web-table.min.js')
   link(rel='stylesheet', href='https://unpkg.com/element-ui/lib/theme-chalk/index.css')
 
 block content
   h1= title
   p Welcome to #{title}
-  web-app
+  button(class='el-button' id="check")='审核'
+  //- web-app
+  web-table(id="webTable" dialog-visible="false" )
+  script.
+    let btn = document.querySelector('#check')
+    var webTable = document.querySelector('#webTable')
+    btn.onclick = function () {
+      //- console.log(webTable.$data)
+      webTable.setAttribute("dialog-flag", true)
+    }
+    webTable.addEventListener('CloseFrame', function () {
+      webTable.setAttribute("dialog-flag", false)
+    })
+    function closeFrame () {
+      webTable.setAttribute("dialog-flag", false)
+    }

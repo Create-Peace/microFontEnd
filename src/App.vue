@@ -9,10 +9,9 @@
 
 <script>
 import Vue from 'vue'
-// import 'element-ui/lib/theme-chalk/index.css'
-// import 'element-ui/lib/theme-chalk/index.css';
 import HelloWorld from './components/HelloWorld.vue'
-import { Button, Message } from 'element-ui'
+import frame from './components/frame'
+import { Button, Message, Dialog } from 'element-ui'
 import axios from 'axios'
 Vue.prototype.$message = Message;
 export default {
@@ -20,7 +19,8 @@ export default {
   props: ['testProp'],
   components: {
       HelloWorld,
-      Button
+      Button,
+      frame
   },
   methods: {
     messageTip () {
