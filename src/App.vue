@@ -8,16 +8,19 @@
 </template>
 
 <script>
+import Vue from 'vue'
+// import 'element-ui/lib/theme-chalk/index.css'
 // import 'element-ui/lib/theme-chalk/index.css';
 import HelloWorld from './components/HelloWorld.vue'
 import { Button, Message } from 'element-ui'
 import axios from 'axios'
+Vue.prototype.$message = Message;
 export default {
   name: 'app',
   props: ['testProp'],
   components: {
-    HelloWorld,
-    Button
+      HelloWorld,
+      Button
   },
   methods: {
     messageTip () {
@@ -26,7 +29,7 @@ export default {
         "status": 2
       })
       .then(res => {
-        Message({
+        this.$message({
           type: 'success',
           message: res.data.code
         })
