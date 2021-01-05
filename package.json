@@ -10,7 +10,7 @@
     "server1": "node ./server1/bin/www"
   },
   "dependencies": {
-    "axios": "^0.18.0",
+    "axios": "^0.21.1",
     "element-ui": "^2.4.9",
     "vue": "^2.5.17"
   },
