@@ -1,4 +1,4 @@
-# 实现一个vue 应用的webcomponent
+# 使用webComponent实现前端微服务
 
 ## Project setup
 ```
